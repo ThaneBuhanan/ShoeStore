@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,16 +10,18 @@
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:gravity="center_vertical"
+        android:labelFor="@id/email_input"
+        android:text="@string/email"
         app:layout_constraintBottom_toBottomOf="@+id/email_input"
         app:layout_constraintEnd_toStartOf="@+id/email_input"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/email_input"
-        tools:text="email" />
+        app:layout_constraintTop_toTopOf="@+id/email_input" />
 
     <EditText
         android:id="@+id/email_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints="emailAddress"
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@id/password_input"
@@ -35,17 +36,19 @@
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:gravity="center_vertical"
+        android:labelFor="@id/password_input"
+        android:text="@string/password"
         app:layout_constraintBottom_toBottomOf="@+id/password_input"
         app:layout_constraintEnd_toStartOf="@+id/password_input"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/password_input"
-        tools:text="password" />
+        app:layout_constraintTop_toTopOf="@+id/password_input" />
 
     <EditText
         android:id="@+id/password_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:autofillHints="password"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Login"
+        android:text="@string/login"
         app:layout_constraintBottom_toTopOf="@+id/signup_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +72,7 @@
         android:id="@+id/signup_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign up"
+        android:text="@string/sign_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/login_button" />
