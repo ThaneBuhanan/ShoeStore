@@ -13,7 +13,7 @@ import com.udacity.shoestore.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
 
-    private val viewModel: WelcomeViewModel = ViewModelProvider(this)[WelcomeViewModel::class.java]
+    private val viewModel: WelcomeViewModel by lazy { ViewModelProvider(this)[WelcomeViewModel::class.java] }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
