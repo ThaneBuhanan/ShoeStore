@@ -1,10 +1,11 @@
-package com.udacity.shoestore
+package com.udacity.shoestore.shoelist
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.udacity.shoestore.R
 
 class ShoeListFragment : Fragment() {
 
