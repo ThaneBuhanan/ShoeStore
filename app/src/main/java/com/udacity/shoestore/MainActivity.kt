@@ -5,6 +5,7 @@ import android.os.Bundle
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
+    //TODO setup the nav controller with the toolbar and an AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

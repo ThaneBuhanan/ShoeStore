@@ -13,8 +13,8 @@
 
         <TextView
             android:id="@+id/email_label"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:gravity="center_vertical"
             android:labelFor="@id/email_input"
@@ -26,21 +26,23 @@
 
         <EditText
             android:id="@+id/email_input"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="32dp"
             android:autofillHints="emailAddress"
             android:ems="10"
             android:inputType="textEmailAddress"
             app:layout_constraintBottom_toTopOf="@id/password_input"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/email_label"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
             android:id="@+id/password_label"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:gravity="center_vertical"
             android:labelFor="@id/password_input"
@@ -52,15 +54,16 @@
 
         <EditText
             android:id="@+id/password_input"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="32dp"
             android:autofillHints="password"
             android:ems="10"
             android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/password_label"
             app:layout_constraintTop_toBottomOf="@+id/email_input" />
 
         <Button
@@ -69,20 +72,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/login"
-            app:layout_constraintBottom_toTopOf="@+id/signup_button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password_input"
-            app:layout_constraintVertical_chainStyle="packed" />
+            app:layout_constraintStart_toEndOf="@id/signup_button"
+            app:layout_constraintTop_toBottomOf="@id/password_input" />
 
         <Button
             android:id="@+id/signup_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="@string/sign_up"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/login_button"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/login_button" />
+            app:layout_constraintTop_toBottomOf="@id/password_input" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
