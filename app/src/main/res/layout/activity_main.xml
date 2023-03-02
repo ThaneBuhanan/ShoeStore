@@ -20,6 +20,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <!-- Constraint layout used for appbar. -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
