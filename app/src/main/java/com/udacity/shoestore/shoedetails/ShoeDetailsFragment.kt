@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailsBinding
@@ -15,7 +16,9 @@ import com.udacity.shoestore.shoelist.ShoeListViewModel
 
 class ShoeDetailsFragment : Fragment() {
 
-    private val viewModel: ShoeListViewModel by activityViewModels()
+    private val shoeListViewModel: ShoeListViewModel by activityViewModels()
+
+    private val viewModel: ShoeDetailsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -23,13 +26,17 @@ class ShoeDetailsFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentShoeDetailsBinding>(
             inflater, R.layout.fragment_shoe_details, container, false
         )
+
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+
         binding.cancelButton.setOnClickListener { goBack() }
         binding.saveButton.setOnClickListener {
             saveShoe(
-                binding.nameEdit.text.toString(),
-                binding.sizeEdit.text.toString().toDouble(),
-                binding.companyEdit.text.toString(),
-                binding.detailsEdit.text.toString(),
+                viewModel.name.value.toString(),
+                viewModel.size.value.toString().toDouble(),
+                viewModel.company.value.toString(),
+                viewModel.details.value.toString(),
             )
         }
 
@@ -46,7 +53,7 @@ class ShoeDetailsFragment : Fragment() {
         company: String,
         details: String
     ) {
-        viewModel.addShoe(Shoe(name, size, company, details))
+        shoeListViewModel.addShoe(Shoe(name, size, company, details))
 
         goBack()
     }
